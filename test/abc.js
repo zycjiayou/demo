@@ -1,6 +1,6 @@
 import React from 'react';
-import './abc.css';
+import './abc.less';
 
 export default function() {
-  return <div className="abc">{'hello, world!'}</div>
+  return <div className="abc">{'颈椎很重要!'}</div>
 }
