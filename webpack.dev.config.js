@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
@@ -12,6 +13,10 @@ module.exports = {
     filename: '[name].js'
   },
   mode: 'development',
+  devServer: {
+    contentBase: './dist',
+    // hot: true
+  },
   module: {
     rules: [
       {
@@ -44,5 +49,6 @@ module.exports = {
     filename: devMode ? '[name].css' : '[name].[hash].css',
     chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
   }),
+  // new webpack.HotModuleReplacementPlugin()
   ]
 }
