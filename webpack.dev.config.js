@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -48,6 +49,7 @@ module.exports = {
     filename: '[name].css',
     chunkFilename: '[id].css' 
   }),
-  // new webpack.HotModuleReplacementPlugin()
+  // new webpack.HotModuleReplacementPlugin(),
+  new FriendlyErrorsWebpackPlugin()
   ]
 }

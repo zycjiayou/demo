@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -52,6 +54,7 @@ module.exports = {
     filename: '[name].[contenthash:8].css',
     chunkFilename: '[id].[contenthash:8].css',
   }),
-  // new webpack.HotModuleReplacementPlugin()
+  // new webpack.HotModuleReplacementPlugin(),
+  new FriendlyErrorsWebpackPlugin()
   ]
 }
